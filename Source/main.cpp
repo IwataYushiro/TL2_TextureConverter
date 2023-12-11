@@ -1,6 +1,13 @@
 #include <cstdio>
 #include <cstdlib>
+#include "TextureConverter.h"
 
+enum Argument
+{
+	ApplicationPath,	//アプリケーションのパス
+	FilePath,			//渡されたファイルのパス
+	NumArgument
+};
 int main(int argc, char* argv[])
 {
 	//argcの数だけ繰り返す
