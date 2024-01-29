@@ -6,8 +6,12 @@
 class TextureConverter
 {
 public:
-	//テクスチャをWICからDDSに変換(ファイルパス)
-	void ConvertTextureWICToDDS(const std::string& filePath);
+	//使用方法の出力
+	static void OutPutUsage();
+public:
+	//テクスチャをWICからDDSに変換(ファイルパス,オプションの数,オプション配列)
+	void ConvertTextureWICToDDS(const std::string& filePath,
+		int32_t numOptions = 0, char* options[] = nullptr);
 
 private:
 	//画像の情報
@@ -29,5 +33,5 @@ private:
 	//フォルダパスとファイル名を分離
 	void SeparateFilePath(const std::wstring& filePath);
 	//DDSテクスチャとしてファイル書き出し
-	void SaveDDSTextureToFile();
+	void SaveDDSTextureToFile(int32_t numOptions, char* options[]);
 };
